@@ -1,4 +1,4 @@
-# Organic Theme Enhance
+# Organic Theme Enhanced
 -- several notable bugs fixed. 
 
 1. Add to cart from homepage issue
