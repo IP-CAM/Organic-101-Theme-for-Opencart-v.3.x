@@ -500,6 +500,12 @@ $('#button-cart').on('click', function() {
         $('html, body').animate({ scrollTop: 0 }, 'slow');
 
         $('#cart > ul').load('index.php?route=common/cart/info ul li');
+		
+		
+		var o = new RegExp(/^\d+/).exec(json['total']);
+		setTimeout(function() {
+		$("#cartviewid .badshopping-cart-count").html(o)
+		}, 100), $("#cartviewid > .badul").load("index.php?route=common/cart/info .badul .badli")
       }
     },
         error: function(xhr, ajaxOptions, thrownError) {
