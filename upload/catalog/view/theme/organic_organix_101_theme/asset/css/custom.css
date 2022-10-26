@@ -2054,6 +2054,7 @@ body#checkout .custom-checkbox {
 	position: relative;
 	display: inline-block;
 	vertical-align: middle;
+	cursor:pointer;
 }
 .badtab-producat-main-title > img{
     position: absolute;
