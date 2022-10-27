@@ -135,8 +135,12 @@
                                   <button class="btn-unstyle badcustomer-signin-btn" data-target="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="lnr lnr-user"></i>
                                     <div class="badcustomer-signin-btn-login">
+									            {% if not logged %}
                                     <span>Login Or</span>
                                     <span>Register</span>
+                              {% else %}
+                                <span>My Account</span>
+                              {% endif %}
                                     </div>
                                 </button>
                                   <div class="dropdown-menu badcustomer-signin-content-box">
