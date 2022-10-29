@@ -2,7 +2,7 @@
     --theme-custom-color : #124a2f;
     --theme-background-color : #ffffff;
     --badtheme-font-name-1 : 'Work Sans', sans-serif;
-    
+
     /*--badtheme-font-link-1 : @import('');*/
     --badtheme-font-name-2 : 'Work Sans', sans-serif;
     /*--badtheme-font-link-2 : @import url("navigation.css");*/
@@ -11113,7 +11113,7 @@ body#checkout #footer {
 }
 
 #block-reassurance li .block-reassurance-item {
-    padding: 15px;  
+    padding: 15px;
 }
 #block-reassurance{
     border: 1px solid #dddddd;
@@ -12044,4 +12044,16 @@ body#checkout #footer {
 .product-line-info.product-price{
     display: flex;
     align-items: center;
+}
+
+/* hpwd */
+
+.badproduct-wrapper-content .thumbnail-container {
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px 0px;
+  border-radius: 5px;
+}
+
+
+.product-miniature.badproduct-wrapper-all {
+  margin-bottom: 30px;
 }
