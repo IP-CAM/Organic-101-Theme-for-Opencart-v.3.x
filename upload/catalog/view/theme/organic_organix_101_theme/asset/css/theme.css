@@ -372,7 +372,7 @@ html {
 }
 
 html {
-    font-size: 16px;
+    font-size: 13px;
     -ms-overflow-style: scrollbar;
     -webkit-tap-highlight-color: transparent
 }
@@ -12047,12 +12047,11 @@ body#checkout #footer {
 }
 
 /* hpwd */
-
 .badproduct-wrapper-content .thumbnail-container {
-  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px 0px;
-  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 0px 7px 0px;
+  border-radius: 7px;
+  border: 1px solid #dfdfdf;
 }
-
 
 .product-miniature.badproduct-wrapper-all {
   margin-bottom: 30px;
