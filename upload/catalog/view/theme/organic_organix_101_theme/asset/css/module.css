@@ -693,7 +693,7 @@
 /*offerbanner*/
 .badofferbanner-block{
     background-color: #f4faed;
-    padding-bottom: 80px;
+    padding-bottom: 30px;
     position: relative;
 }
 .badofferbanner-block:before{
@@ -702,12 +702,12 @@
     top: 0;
     left: 0;
     right: 0;
-    background: #fff;
+/*    background: #fff;*/
     height: 80px;
     display: block;
 }
 .badofferbanner_image{
-    margin-bottom: 60px;
+/*    margin-bottom: 60px;*/
     border-radius: 3px;
     overflow: hidden;
     position: relative;
@@ -737,7 +737,7 @@
     top: 50%;
 }
 .badofferbanner-block .badmain-title-wrapper .badmain-title{
-    margin-bottom: 30px;
+    margin: 30px 0 10px 0;
 }
 .badofferbanner-content-box{
     text-align: center;

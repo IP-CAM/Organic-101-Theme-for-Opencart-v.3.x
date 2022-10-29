@@ -581,7 +581,7 @@ body#checkout .custom-checkbox {
 #_desktop_contact_link i,
 .desktop_email_link i,
 .desktop_contact_link i{
-	font-size: 24px;
+	font-size: 18px;
 	color: #2a7d2e;
 	display: inline-block;
 	vertical-align: middle;
@@ -606,7 +606,7 @@ body#checkout .custom-checkbox {
 		font-size: 13px;
 	}
 	#_desktop_contact_link i, .desktop_email_link i, .desktop_contact_link i{
-		font-size: 18px;
+		font-size: 14px;
 	}
 }
 @media(max-width: 767px){
@@ -2275,10 +2275,11 @@ body#checkout .custom-checkbox {
 	text-align: center;
 }
 .badmain-title-wrapper .badmain-title{
-	font-size: 46px;
+	font-size: 35px;
 	color: #124a2f;
 	font-weight: 500;
-	margin-bottom: 60px;
+	margin-bottom: 30px;
+	margin-top: 30px;
 	text-align: center;
 }
 .badmain-title-wrapper .badmain-sub-title{
@@ -2324,7 +2325,7 @@ body#checkout .custom-checkbox {
 .badtestimonials-block,
 .badbrandlist-block,
 .badhomeblog-content-wrapper{
-	margin-bottom: 80px;
+/*	margin-bottom: 80px;*/
 }
 .badcustomerservices-block,
 .badall-multibanner{
@@ -3473,4 +3474,9 @@ input:focus {
 .kr_blog_post_area .badall-theme-button{
 	display: inline-block;
 	vertical-align: middle;
+}
+
+
+.badofferbanner-block .badmain-title-wrapper .badmain-title {
+  margin: 30px 0 10px 0;
 }
