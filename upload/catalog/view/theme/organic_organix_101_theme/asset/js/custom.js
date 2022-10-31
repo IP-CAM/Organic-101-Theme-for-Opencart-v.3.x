@@ -316,7 +316,7 @@ $(window).load(function() {
     function setCustomDropdown(btnClickClass, dropdownClass, defaultDropdownClose = false) {
         var speed = 400;
         $(document).on('click', btnClickClass,function(){
-            
+
             if ($(dropdownClass).hasClass('open')) {
                 $(btnClickClass).removeClass('open');
                 $(dropdownClass).removeClass('open').slideUp(speed);
@@ -327,7 +327,7 @@ $(window).load(function() {
                 $(btnClickClass).addClass('open');
                 $(dropdownClass).addClass('open').slideDown(speed);
             }
-        }); 
+        });
     }
 
     /* Header Dropdowns */
@@ -351,7 +351,7 @@ $(document).ready(function(){
 function getDesktopMobileClassInfo(){
     moreMobileViewJs('.badmain-menu-content-box', '#badmobile-horizontal-menu');
     moreMobileViewJs('.badheader-top-center', '#badmobile-header-center');
-    moreMobileViewJs('.badheader-top-right', '#badmobile-header-right'); 
+    moreMobileViewJs('.badheader-top-right', '#badmobile-header-right');
 
     moreMobileViewcallemailJs('.badheader-left-right-contant', '#badmobile-header-call');
 }
@@ -375,14 +375,14 @@ function moreMobileViewJs(parentClass, childClass)
 function changeDivIntoMobile(parentClass, childClass) {
     if ($(childClass).html() == "" || $(childClass).html() == null || $(childClass).html() == undefined) {
         $(childClass).html($(parentClass).html());
-        $(parentClass).html('');
+//        $(parentClass).html('');
     }
 }
 
 function changeDivIntoDesktop(parentClass, childClass) {
     if ($(parentClass).html() == "" || $(parentClass).html() == null || $(parentClass).html() == undefined) {
         $(parentClass).html($(childClass).html());
-        $(childClass).html('');
+//        $(childClass).html('');
     }
 }
 
