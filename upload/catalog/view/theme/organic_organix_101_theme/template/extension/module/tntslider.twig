@@ -1,10 +1,23 @@
+
+
+<link rel="stylesheet" type="text/css" href="catalog/view/javascript/custom.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
 <div class="badhome-slider-block" data-speed='{{ speed }}' data-pause='{{ hover }}' data-wrap='{{ loop }}'> 
     <div class="badhome-slider-inner">
+    <style type="text/css">
+        .badhome-slider-inner button {
+            background: none;
+            border: none;
+        }
+    </style>
         <div class="badhome-slider-content-wrapper owl-carousel owl-theme">
             {% set myVal = 1 %}
 
              {% for slider in sliders %}
-                <div class="item badhome-slider-items" data-dot="{{ myVal }}">
+                <div class="item badhome-slider-items" data-dot="<button>{{ myVal }}</button>">
 
                      <a href="{{ slider.tntsliderchild_link }}" title="{{ slider.tntsliderchild_title }}" >
                         <img class="lazynot" src="{{ slider.tntsliderchild_image }}"  alt="" />
@@ -31,16 +44,60 @@
             <div class="badhome-slider-pagination">
                 <div class="badhome-slider-content">
                     <button class="badhome-slider-prev-btn">
-                        <i class="lnr lnr-chevron-left"></i>
+                        <i class="fa fa-angle-left"></i>
                     </button>
                     <button class="badhome-slider-next-btn">
-                        <i class="lnr lnr-chevron-right"></i>
+                        <i class="fa fa-angle-right"></i>
                     </button>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<script>
 
+    $(document).ready(function() {
+    var e=$(".badhome-slider-block").attr("data-speed"), t=$(".badhome-slider-block").attr("data-pause"), i=$(".badhome-slider-block").attr("data-wrap"), o=$(".badhome-slider-block").attr("data-navigation"), n=$(".badhome-slider-block").attr("data-pagination");
+    $(".badhome-slider-block .badhome-slider-content-wrapper").owlCarousel( {
+        loop:i, autoplay: true, autoplayHoverPause: true, autoplayTimeout: 2000, dots: true, dotsData: true, pagination:n, navigation:o, slideSpeed:e, autoplayHoverPause:t, paginationSpeed:400, responsive: {
+            0: {
+                items: 1
+            }
+            , 320: {
+                items: 1, slideBy: 1
+            }
+            , 576: {
+                items: 1, slideBy: 1
+            }
+            , 768: {
+                items: 1, slideBy: 1
+            }
+            , 992: {
+                items: 1, slideBy: 1
+            }
+            , 1200: {
+                items: 1, slideBy: 1
+            }
+            , 1400: {
+                items: 1, slideBy: 1
+            }
+            , 1600: {
+                items: 1, slideBy: 1
+            }
+            , 1800: {
+                items: 1, slideBy: 1
+            }
+        }
+    }
+    ), $(document).on("click", ".badhome-slider-block .badhome-slider-prev-btn", function() {
+        $(".badhome-slider-block").find(".owl-prev").trigger("click")
+    }
+    ), $(document).on("click", ".badhome-slider-block .badhome-slider-next-btn", function() {
+        $(".badhome-slider-block").find(".owl-next").trigger("click")
+    }
+    )
+});
+
+</script>
 
 
