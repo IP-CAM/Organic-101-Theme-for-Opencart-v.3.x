@@ -36,7 +36,7 @@
   {% for link in links %}
     <link href="{{ link.href }}" rel="{{ link.rel }}" />
   {% endfor %}
-  
+
   <link href="catalog/view/theme/organic_organix_101_theme/asset/css/linearicons-Free.css"  rel="stylesheet" />
 
   <link href="catalog/view/theme/organic_organix_101_theme/asset/css/theme.css"  rel="stylesheet" />
@@ -53,8 +53,8 @@
   <script src="catalog/view/theme/organic_organix_101_theme/asset/js/jquery.fancybox.js"></script>
   <script async src="catalog/view/theme/organic_organix_101_theme/asset/js/allmodule.js"></script>
   <script  src="catalog/view/theme/organic_organix_101_theme/asset/js/jquery.storageapi.min.js"></script>
-  
-    
+
+
    <div id="lazysetting" class="hidden">0</div>
 {% endif %}
 <!-- css & js -->
@@ -79,14 +79,84 @@
             <div class="badheader-left-right-contant container">
               <div class="row">
                 <div class="col-xl-12 col-md-12 col-xs-12 badheader-call-info">
-                  <div class="desktop_email_link">
-                    <i class="lnr lnr-envelope"></i><span>{{ email }}</span>
-                  </div>
-                  <div id="_desktop_contact_link">
-                    <div id="contact-link"><i class="lnr lnr-phone-handset"></i><span>{{ callno }}</span>
+                 
+                   <a href="mailto:{{ email }}"  class="desktop_email_link">
+                    <i class="lnr lnr-envelope"></i><span class="hidden-xs hidden-sm hidden-md">{{ email }}</span>
+                  </a>
+                  <a href="tel:{{ callno }}" id="_desktop_contact_link">
+                    <div id="contact-link"><i class="lnr lnr-phone-handset"></i><span class="hidden-xs hidden-sm hidden-md">{{ callno }}</span>
                     </div>
-                  </div><div class="desktop_contact_link"><i class="lnr lnr-license"></i><span>{{ contactus }}</span>
-                  </div>
+                  </a>
+                  
+                  <a href="{{ contact }}" class="desktop_contact_link"><i class="lnr lnr-license"></i><span class="hidden-xs hidden-sm hidden-md">{{ contactus }}</span>
+            </a>
+			
+			
+				 {% if hpdp_status %}
+			 <style>
+		.hpdp-link:before {
+    background-color: #2a7d2e;
+    content: '';
+    height: 20px;
+    width: 1px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    left: 0;
+}
+
+.hpdp-link{
+    margin-left: 15px;
+    padding: 0 15px;
+}
+
+.hpdp-link:last-child{
+    margin-left: 0;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .hpdp-link:before{
+    content:none;
+  }
+  
+  .hpdp-link{
+    margin-left: 0;
+    padding: 0;
+  }
+}
+			 
+			 </style>
+            {% if delivery_logged %}
+             <div class="dropdown hpdp-link desktop_contact_link"><a href="{{ account }}" title="{{ text_account }}" class="dropdown-toggle" data-toggle="dropdown"><span class="hidden-xs hidden-sm hidden-md">{{ delivery_name }}</span> </a>
+              <ul class="dropdown-menu dropdown-menu-right">
+                <li><a href="{{ delivery_jobs_link }}">{{ text_delivery_jobs }}</a></li>
+                <li><a href="{{ delivery_profile_link }}">{{text_profile}}</a></li>
+                <li><a href="{{ delivery_logout_link }}">{{ text_logout }}</a></li>
+              </ul>
+            </div>
+            {% else %}
+            <div class="hpdp-link desktop_contact_link"><a href="{{ link_delivery_partner }}" title="{{ text_delivery_partner }}"><i class="fa fa-truck"></i> <span class="hidden-xs hidden-sm hidden-md">{{ text_delivery_partner }}</span></a></div>
+            {% endif %}
+      {% endif %}
+      
+      
+        {% if module_marketplace_status is defined and module_marketplace_status and  module_hyperlocal_status is defined and module_hyperlocal_status %}
+            <div class="dropdown hpdp-link desktop_contact_link">
+                <a href="" title="" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-location-arrow"></i> <span class="hidden-xs hidden-sm hidden-md">{{ text_location }}</span> </a>
+                
+                <ul class="dropdown-menu dropdown-menu-right">
+                  <li><a  data-target="#myModal" data-toggle="modal">{{ text_change_location }}</a></li>
+                  {% if location_status is defined and location_status %}
+                  <li class="divider" role="separator"></li>
+                  <li class="dropdown-header">{{ text_current_location }}</li>
+                  <li class="text-center"><div style="width:500px;">{{ address }}</div></li>
+                  {% endif %}
+                </ul>
+            </div>
+            {% endif %}
+			
                 </div>
                 <div class="col-xl-6 col-md-4 col-xs-12 badheader-block-info">
 
@@ -122,7 +192,7 @@
                         <div class="badwishlist">
                           <a href="{{ wishlist }}">
                             <div class="badwishlist-wrapper">
-                              <i class="lnr lnr-heart"></i> 
+                              <i class="lnr lnr-heart"></i>
                               <span class="cart-wishlist-number">0</span>
                             </div>
                           </a>
@@ -132,15 +202,15 @@
                           <div class="badcustomer-signin-block">
                             <div class="badcustomer-signin-inner">
                               <div class="dropdown js-dropdown badcustomer-signin-content-box-wrapper">
-                                  <button class="btn-unstyle badcustomer-signin-btn" data-target="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  <button class="btn-unstyle badcustomer-signin-btn" {% if logged %} data-target="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" {% endif %}>
                                     <i class="lnr lnr-user"></i>
                                     <div class="badcustomer-signin-btn-login">
-									            {% if not logged %}
-                                    <span>Login Or</span>
-                                    <span>Register</span>
-                              {% else %}
-                                <span>My Account</span>
-                              {% endif %}
+                  {% if not logged %}
+                                    <span><a href="{{ login }}"><span class="signin">{{ text_login }}</span></a> Or</span>
+                                    <span><a href="{{ register }}"><span class="signin">{{ text_register }}</span></a></span>
+                  {% else %}
+                  <span>My Account</span>
+                  {% endif %}
                                     </div>
                                 </button>
                                   <div class="dropdown-menu badcustomer-signin-content-box">
@@ -152,11 +222,8 @@
                                               <a href="{{ transaction }}"><span class="signin">{{ text_transaction }}</span></a>
                                               <a href="{{ download }}"><span class="signin">{{ text_download }}</span></a>
                                               <a href="{{ logout }}"><span class="signin">{{ text_logout }}</span></a>
-                                              {% else %}
-                                              <a href="{{ register }}"><span class="signin">{{ text_register }}</span></a>
-                                              <a href="{{ login }}"><span class="signin">{{ text_login }}</span></a>
                                               {% endif %}
-                                            
+
                                           </div>
                                       </div>
                                   </div>
@@ -187,7 +254,7 @@
           <!-- mobile header -->
       </div>
     </header>
-           
-    
+
+
 
 

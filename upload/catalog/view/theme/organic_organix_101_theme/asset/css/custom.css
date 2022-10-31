@@ -610,9 +610,17 @@ body#checkout .custom-checkbox {
 	}
 }
 @media(max-width: 767px){
-	#_desktop_contact_link, .desktop_email_link, .desktop_contact_link{
-		display: block;
+	.badheader-call-info > .desktop_email_link,
+	.badheader-call-info > .desktop_contact_link,
+	.badheader-call-info > #_desktop_contact_link
+	{
+	  margin-right:8px;
 	}
+	
+	.badheader-call-info{
+	    padding-bottom: 10px;
+    	padding-top: 10px;
+	}	
 	#_desktop_contact_link{
 		margin: 0;
 		padding: 0;
@@ -1275,8 +1283,7 @@ body#checkout .custom-checkbox {
 	}
 }
 @media(max-width: 767px){
-	.badheader-block-info,
-	.badheader-call-info{
+	.badheader-block-info{
 		text-align: center;
 	}
 	.badshopping-cart-name{
