@@ -320,11 +320,11 @@ ul {
     }
 }
 
-@media(max-width:575px) {
+/* @media(max-width:575px) {
     .product-layout.product-grid {
         width: 100%
     }
-}
+} */
 
 @media(max-width:575px) {
     .product-list .badproduct-wrapper {
