@@ -7480,6 +7480,7 @@ small.value {
     height: 100%
 }
 
+/*
 .input-group .input-group-btn>.btn {
     border: 0;
     box-shadow: none;
@@ -7490,6 +7491,7 @@ small.value {
     padding: 12.5px 15px;
     text-transform: uppercase
 }
+*/
 
 .input-group .input-group-btn>.btn[data-action=show-password] {
     background: #7a7a7a;
